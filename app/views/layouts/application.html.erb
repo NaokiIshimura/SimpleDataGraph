@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= render 'layouts/rails_default' %>
+    <%= render 'layouts/shim' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/header' %>
+
+    <% if request.path_info == root_path %>
+      <div class="container">
+        <%if notice %><p class="notice"><%= notice %></p><% end %>
+        <%if alert %><p class="alert"><%= alert %></p><% end %>
+      </div>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+
+    <% else %>
+      <div class="container">
+        <%if notice %><p class="notice"><%= notice %></p><% end %>
+        <%if alert %><p class="alert"><%= alert %></p><% end %>
+        <%= yield %>
+        <%= render 'layouts/footer' %>
+      </div>
+    <% end %>
+
+  </body>
+</html>

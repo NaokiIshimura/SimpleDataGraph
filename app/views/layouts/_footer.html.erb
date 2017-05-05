@@ -1,0 +1,28 @@
+<% if request.path_info == root_path %>
+  <footer class="footer">
+    <div class="container">
+      <small>
+        <a href="https://github.com/NaokiIshimura">Naoki Ishimura</a>
+      </small>
+      <nav>
+        <ul>
+          <li><%= link_to "About", static_pages_about_path %></li>
+          <li><%= link_to "How to use", static_pages_how_to_use_path %></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+<% else %>
+  <footer class="footer">
+    <small>
+      <a href="https://github.com/NaokiIshimura">Naoki Ishimura</a>
+    </small>
+    <nav>
+      <ul>
+        <li><%= link_to "About", static_pages_about_path %></li>
+        <li><%= link_to "How to use", static_pages_how_to_use_path %></li>
+      </ul>
+    </nav>
+  </footer>
+
+<% end %>

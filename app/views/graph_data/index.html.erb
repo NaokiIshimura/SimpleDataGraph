@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Graph Data</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Data1</th>
+      <th>Data2</th>
+      <th>Data3</th>
+      <th>Data4</th>
+      <th>Data5</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @graph_data.each do |graph_datum| %>
+      <tr>
+        <td><%= graph_datum.user_id %></td>
+        <td><%= graph_datum.data1 %></td>
+        <td><%= graph_datum.data2 %></td>
+        <td><%= graph_datum.data3 %></td>
+        <td><%= graph_datum.data4 %></td>
+        <td><%= graph_datum.data5 %></td>
+        <td><%= link_to 'Show', graph_datum %></td>
+        <td><%= link_to 'Edit', edit_graph_datum_path(graph_datum) %></td>
+        <td><%= link_to 'Destroy', graph_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Graph Datum', new_graph_datum_path %>

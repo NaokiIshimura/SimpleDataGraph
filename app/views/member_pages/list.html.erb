@@ -1,0 +1,36 @@
+<h1>
+  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+  List
+</h1>
+
+<hr>
+
+<%= paginate @data %>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th></th>
+    <th>data1</th>
+    <th>data2</th>
+    <th>data3</th>
+    <th>data4</th>
+    <th>data5</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @data.each do |d| %>
+      <tr>
+        <td><%= Time.at(d.created_at).strftime("%Y/%m/%d %H:%M:%S") %></td>
+        <td><%= d.data1 %></td>
+        <td><%= d.data2 %></td>
+        <td><%= d.data3 %></td>
+        <td><%= d.data4 %></td>
+        <td><%= d.data5 %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @data %>

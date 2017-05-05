@@ -1,0 +1,22 @@
+<h1>
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  Token
+</h1>
+<hr>
+
+<label>Token</label><br>
+<%= @token %>
+<br><br>
+<%= button_to "change token",
+              member_pages_refresh_token_path,
+              data: {confirm: "Do you really want to change it?"},
+              method: :get,
+              class: "btn btn-primary" %>
+
+<hr>
+
+<label>Sample Request</label><br>
+$ curl <%= SimpleGraph::Application.config.endpoint %> -X POST \<br>
+-H "X-Auth-Token:<%= @token %>" \<br>
+-H 'Content-Type:application/json' \<br>
+-d '{"data1":1,"data2":2, "data3":3, "data4":4, "data5":5}'

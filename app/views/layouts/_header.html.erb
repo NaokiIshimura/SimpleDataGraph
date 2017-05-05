@@ -1,0 +1,18 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "simple graph", root_path, id: "logo", class: "" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li><%= link_to "Graph", member_pages_graph_path(data:1) %></li>
+          <li><%= link_to "List", member_pages_list_path %></li>
+          <li><%= link_to "Token", member_pages_token_path %></li>
+          <%= render 'layouts/dropdown' %>
+        <% else %>
+        <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <li><%= link_to "Login", new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

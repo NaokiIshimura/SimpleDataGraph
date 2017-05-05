@@ -1,0 +1,82 @@
+<h1>
+  <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>
+  Graph
+</h1>
+
+<hr>
+
+<ul class="pagination">
+
+  <% if @label == "data1" %>
+  <li class="page active">
+    <a href="javascript:void(0)">data1</a>
+  </li>
+  <% else %>
+  <li class="page">
+    <a href="<%= member_pages_graph_path(data:1) %>">data1</a>
+  </li>
+  <% end %>
+
+  <% if @label == "data2" %>
+      <li class="page active">
+        <a href="javascript:void(0)">data2</a>
+      </li>
+  <% else %>
+  <li class="page">
+    <a href="<%= member_pages_graph_path(data:2) %>">data2</a>
+  </li>
+  <% end %>
+
+  <% if @label == "data3" %>
+      <li class="page active">
+        <a href="javascript:void(0)">data3</a>
+      </li>
+  <% else %>
+  <li class="page">
+    <a href="<%= member_pages_graph_path(data:3) %>">data3</a>
+  </li>
+  <% end %>
+
+
+  <% if @label == "data4" %>
+      <li class="page active">
+        <a href="javascript:void(0)">data4</a>
+      </li>
+  <% else %>
+  <li class="page">
+    <a href="<%= member_pages_graph_path(data:4) %>">data4</a>
+  </li>
+  <% end %>
+
+
+  <% if @label == "data5" %>
+    <li class="page active">
+      <a href="javascript:void(0)">data5</a>
+    </li>
+  <% else %>
+  <li class="page">
+    <a href="<%= member_pages_graph_path(data:5) %>">data5</a>
+  </li>
+  <% end %>
+
+</ul>
+
+<canvas id="chart" width="800" height="400"></canvas>
+
+<script>
+    var ctx = document.getElementById('chart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: <%= @graph_labels.to_json.html_safe %>,
+            datasets: [{
+                label:           '<%= @label %>',
+                data:             <%= @graph_data.to_json.html_safe %>,
+                backgroundColor: "<%= @bg_color %>"
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
