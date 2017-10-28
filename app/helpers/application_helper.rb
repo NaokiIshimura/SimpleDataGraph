@@ -2,7 +2,7 @@ module ApplicationHelper
 
   # ページごとの完全なタイトルを返す
   def full_title(page_title = '')
-    base_title = "Simple Graph"
+    base_title = "Simple Data Graph"
     if page_title.empty?
       base_title
     else
