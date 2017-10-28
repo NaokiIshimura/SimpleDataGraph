@@ -16,6 +16,13 @@ $ curl http://xxx.xxx.xxx/data -X POST \
 -d '{"data1":1,"data2":2, "data3":3, "data4":4, "data5":5}'
 ```
 
+## Sample Image
+
+![image1\.png \(1122×972\)](https://raw.githubusercontent.com/NaokiIshimura/rails_project_SimpleGraph/master/app/assets/images/image1.png)
+
+![image2\.png \(1122×818\)](https://raw.githubusercontent.com/NaokiIshimura/rails_project_SimpleGraph/master/app/assets/images/image2.png)
+
+
 ## Set up
 
 1. bundle install
